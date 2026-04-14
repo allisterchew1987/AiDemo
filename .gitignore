@@ -1,0 +1,79 @@
+# .gitignore for .NET / Visual Studio
+# Recommended patterns for dotnet, Visual Studio, Rider, and VS Code
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
+artifacts/
+publish/
+*_PublishedFiles/
+
+# Visual Studio / IDE files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+# Rider / ReSharper
+.idea/
+*.sln.iml
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+**/packages/
+
+# dotnet user secrets
+secrets.json
+
+# Test results and coverage
+TestResults/
+*.trx
+*.coverage
+coverage/
+coverage*.xml
+
+# Logs and binaries
+*.log
+*.vsix
+*.dbmdl
+*.bak
+*.mdf
+*.ldf
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Misc
+project.lock.json
+project.fragment.lock.json
+*.publishsettings
+*.Publish.xml
+*.PublishProfile
+*.binlog
+
+# Temporary files
+*~
+*.tmp
+*.temp
+*.backup
+*.old
+
+# Generated code
+Generated/
+generated/
+
+# Node (if the repo contains frontend parts)
+node_modules/
