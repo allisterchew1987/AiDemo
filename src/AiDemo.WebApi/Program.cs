@@ -15,6 +15,8 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => Results.Ok(new { Message = "Hello from AiDemo Web API" }));
 
+app.MapGet("/test/dummy", () => Results.Ok(new { Feature = "Completed" }));
+
 app.MapGet("/weatherforecast", () =>
 {
     var summaries = new[]
