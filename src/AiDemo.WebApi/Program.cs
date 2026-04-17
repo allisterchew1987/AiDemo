@@ -1,8 +1,12 @@
+using AiDemo.WebApi.Services.Implementations;
+using AiDemo.WebApi.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IGreetingService, GreetingService>();
 
 var app = builder.Build();
 
@@ -14,6 +18,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapGet("/", () => Results.Ok(new { Message = "Hello from AiDemo Web API" }));
+
+app.MapGet("/greeting", async (IGreetingService greetingService) =>
+{
+    var message = await greetingService.GetGreetingAsync();
+    return Results.Ok(new { Message = message });
+});
 
 app.MapGet("/weatherforecast", () =>
 {
