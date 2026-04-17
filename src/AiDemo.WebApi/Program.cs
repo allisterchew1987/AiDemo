@@ -1,8 +1,12 @@
+using AiDemo.WebApi.Services.Implementations;
+using AiDemo.WebApi.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
 var app = builder.Build();
 
@@ -15,27 +19,10 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => Results.Ok(new { Message = "Hello from AiDemo Web API" }));
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/weatherforecast", (IWeatherForecastService weatherForecastService) =>
 {
-    var summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild",
-        "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast(
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]))
-        .ToArray();
-
+    var forecast = weatherForecastService.GetForecast();
     return Results.Ok(forecast);
 });
 
 app.Run();
-
-internal record WeatherForecast(DateTime Date, int TemperatureC, string Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
