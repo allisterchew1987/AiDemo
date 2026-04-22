@@ -164,22 +164,18 @@ Register all services in Program.cs:
 
 ---
 
-## Documentation Requirements
-
-- **Interface and domain classes** must include **XML summary comments**.
-- **Implementation classes** must use the **`<inheritdoc />`** tag where applicable.
-
----
-
-## Unit Test requirements
+## Testing Guidelines
 
 - Services must be unit testable
 - Mock dependencies via interfaces
 - Avoid testing Minimal API endpoints directly unless necessary
-- Use XUnit for unit testing.
-- Follow arrange-act-assert pattern in tests.
-- Mock dependencies using a mocking framework (e.g., Moq).
-- Create/update unit tests when adding or modifying functionality.
+
+---
+
+## Documentation Requirements
+
+- **Interface and domain classes** must include **XML summary comments**.
+- **Implementation classes** must use the **`<inheritdoc />`** tag where applicable.
 
 ---
 
@@ -192,4 +188,3 @@ When generating code, always:
 - Prefer async methods
 - Keep code clean, readable, and maintainable
 - Avoid unnecessary complexity
-- Always add unit tests
