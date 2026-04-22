@@ -192,3 +192,4 @@ When generating code, always:
 - Prefer async methods
 - Keep code clean, readable, and maintainable
 - Avoid unnecessary complexity
+- Always add unit tests
