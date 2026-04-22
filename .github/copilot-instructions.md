@@ -1,15 +1,16 @@
 # GitHub Copilot Instructions
 
-## 🧱 Tech Stack
+## Tech Stack
 - .NET 6
 - ASP.NET Core Minimal API
 - C#
 - Built-in Dependency Injection
-- Optional: Entity Framework Core
+- XUnit for testing
+- Entity Framework Core
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 This project follows a clean, service-oriented architecture:
 
@@ -26,19 +27,20 @@ Data Layer (DbContext / Repositories)
 
 ---
 
-## 📁 Recommended Folder Structure
+## Recommended Folder Structure
 
-/Endpoints
-/Services
+/src/Endpoints
+/src/Services
     /Interfaces
     /Implementations
-/Data
-/Models
-/Common (optional: helpers, extensions, constants)
+/src/Data
+/src/Models
+/src/Common (optional: helpers, extensions, constants)
+/tests/ (for unit tests)
 
 ---
 
-## 🚀 Minimal API Guidelines
+## Minimal API Guidelines
 
 - Define endpoints in Program.cs or modular endpoint files
 - Do NOT place business logic inside endpoints
@@ -54,7 +56,7 @@ Data Layer (DbContext / Repositories)
 
 ---
 
-## 🧠 Services Layer
+## Services Layer
 
 ### Rules
 - Contains all business logic
@@ -81,7 +83,7 @@ Data Layer (DbContext / Repositories)
 
 ---
 
-## 🔌 Dependency Injection
+## Dependency Injection
 
 Register all services in Program.cs:
 
@@ -94,7 +96,7 @@ Register all services in Program.cs:
 
 ---
 
-## 🗄️ Data Access
+## Data Access
 
 - Use EF Core DbContext or repository pattern
 - Keep data logic separate from services where possible
@@ -108,7 +110,7 @@ Register all services in Program.cs:
 
 ---
 
-## 📦 Models
+## Models
 
 - Use simple POCO classes
 - Avoid embedding business logic
@@ -116,7 +118,7 @@ Register all services in Program.cs:
 
 ---
 
-## ✅ .NET 6 Best Practices
+## .NET 6 Best Practices
 
 ### General
 - Use async/await for all I/O operations
@@ -152,7 +154,7 @@ Register all services in Program.cs:
 
 ---
 
-## ❌ Anti-Patterns
+## Anti-Patterns
 
 - Business logic inside endpoints
 - Direct DbContext usage in endpoints
@@ -162,15 +164,23 @@ Register all services in Program.cs:
 
 ---
 
-## 🧪 Testing Guidelines
+## Documentation Requirements
+
+- **Interface and domain classes** must include **XML summary comments**.
+- **Implementation classes** must use the **`<inheritdoc />`** tag where applicable.
+
+---
+
+## Testing Guidelines
 
 - Services must be unit testable
 - Mock dependencies via interfaces
 - Avoid testing Minimal API endpoints directly unless necessary
+- Use XUnit for test projects
 
 ---
 
-## ✨ Copilot Guidance
+## Copilot Guidance
 
 When generating code, always:
 - Use Minimal API patterns
