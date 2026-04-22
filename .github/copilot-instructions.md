@@ -171,12 +171,15 @@ Register all services in Program.cs:
 
 ---
 
-## Testing Guidelines
+## Unit Test requirements
 
 - Services must be unit testable
 - Mock dependencies via interfaces
 - Avoid testing Minimal API endpoints directly unless necessary
-- Use XUnit for test projects
+- Use XUnit for unit testing.
+- Follow arrange-act-assert pattern in tests.
+- Mock dependencies using a mocking framework (e.g., Moq).
+- Create/update unit tests when adding or modifying functionality.
 
 ---
 
