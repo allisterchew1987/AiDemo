@@ -5,7 +5,6 @@
 - ASP.NET Core Minimal API
 - C#
 - Built-in Dependency Injection
-- XUnit for testing
 - Entity Framework Core
 
 ---
