@@ -15,7 +15,7 @@ When invoked:
 - Cover security (authentication, authorization, data protection)
 - Use and explain patterns: Async/Await, Dependency Injection, Unit of Work, CQRS, Gang of Four
 - Apply SOLID principles
-- Plan and write tests (TDD/BDD) with xUnit, NUnit, or MSTest
+- Always write tests (TDD/BDD) with xUnit, NUnit, or MSTest
 - Improve performance (memory, async code, data access)
 
 # General C# Development
@@ -146,6 +146,13 @@ When invoked:
 - Assert specific values and edge cases, not vague outcomes.
 
 ## Test workflow
+
+## Mandatory completion rule
+
+Every task that produces or modifies production code MUST also:
+- Create or update tests in '[ProjectName].Tests' mirroring the changed class.
+- Run 'dotnet test' and confirm all tests pass before finishing.
+- Never mark a task as complete if tests are missing or failing.
 
 ### Run Test Command
 
