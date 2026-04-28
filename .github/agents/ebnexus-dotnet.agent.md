@@ -1,5 +1,5 @@
 ---
-name: "EBNexus .NET Agent"
+name: "EBNexus .NET Agent with Documentor"
 description: An agent designed to assist with software development tasks for .NET projects.
 tools: [read, edit, execute, search, web, agent, todo, vscode/memory]
 ---
